@@ -1,23 +1,13 @@
-import logo from './logo.svg';
 import './App.css';
+import pic  from '../src/assets/uk-b-holidays.svg';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header className="header-container">
+        <img src={pic} className="App-header" alt="pic" />
       </header>
+      <p>Hello this is bank holidays uk!!</p>
     </div>
   );
 }
