@@ -2,15 +2,7 @@
   text-align: center;
 }
 
-.header-container {
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.App-header {
+.App-body {
   
   object-fit: fill;
   flex-direction: column;
@@ -18,5 +10,16 @@
   align-items: center;
   justify-content: center;
 }
+
+
+.body-container {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
 
 
