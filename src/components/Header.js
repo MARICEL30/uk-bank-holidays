@@ -8,7 +8,9 @@ export const Header = () => {
             <Icon>
                 <WomanIcon />
             </Icon>
-            <P className="scrolling"> UK Bank Holidays</P>
+            <PSection>
+            <P> UK Bank Holidays</P>
+            </PSection>
         </Container>
     );
 }
@@ -34,9 +36,24 @@ const Icon = styled.div`
 
 `;
 
+const PSection = styled.div`
+    font-size: 3rem;
+    display: inline-block;
+    white-space: nowrap;
+    animation: AnimatedText 25s infinite linear;
+    padding-left: 100%; 
+    @keyframes AnimatedText  {
+        to {
+          transform: translateX(-100%)
+        }
+      }
+`
+
 const P = styled.h1`
     font-size: 1.5rem;
     margin-top: 70px;
     color: #000000; 
    
 `;
+
+
