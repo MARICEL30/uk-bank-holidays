@@ -7,8 +7,8 @@ export const WomanIcon = () => {
 
   return (
 
-    <svg xmlns="http://www.w3.org/2000/svg" width="391.08839"
-    height="756.35742" viewBox="0 0 691.08839 756.35742"
+    <svg xmlns="http://www.w3.org/2000/svg" width="initial"
+    height="initial" viewBox="0 0 691.08839 756.35742" 
     xmlnsXlink="http://www.w3.org/1999/xlink"><circle cx="179.10794" 
      cy="181.97066" r="143.89207" fill="#ff6884"/>
      <path d="M394.07971,55.60182L116.93066,208.26465c-32.01562,41.04785,576.32227,43.58545,571.30177,.15088L419.48215,55.7528c-7.64948-4.34526-17.67978-4.40488-25.40244-.15098Z" 

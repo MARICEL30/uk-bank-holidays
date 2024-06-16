@@ -8,36 +8,35 @@ export const Header = () => {
             <Icon>
                 <WomanIcon />
             </Icon>
-            <P> UK Bank Holidays</P>
+            <P className="scrolling"> UK Bank Holidays</P>
         </Container>
     );
 }
 
 const Container = styled.div`
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
-    margin: 0 auto;
-    min-width: 100%;
+    align-items: center;
+    margin: 80px auto;
+
 `;
 
+
 const Icon = styled.div`
-   position: absolute;
    border-radius: 50%;
    background: rgb(238,174,202);
    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
-   width: 40rem;
-   height: 40rem;
-   z-index: 1;
+   width: 350px;
+   height: 350px;
+   margin: 0 auto;
+   z-index: -1;
 
 `;
 
 const P = styled.h1`
-    font-size: 2rem;
-    color: #000000;
-    position: absolute;
-    padding-left: 30rem;
-    padding-top: 20rem;
-    z-index: 2;
+    font-size: 1.5rem;
+    margin-top: 70px;
+    color: #000000; 
    
 `;
