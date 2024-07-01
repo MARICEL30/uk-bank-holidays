@@ -10,6 +10,7 @@
     "react-dom": "^18.3.1",
     "react-scripts": "^3.0.1",
     "styled-components": "^6.1.11",
+    "typescript": "^5.5.3",
     "web-vitals": "^4.1.1"
   },
   "scripts": {
@@ -38,8 +39,5 @@
   },
   "resolutions": {
     "styled-components": "^5"
-  },
-  "devDependencies": {
-    "typescript": "^5.5.2"
   }
 }
