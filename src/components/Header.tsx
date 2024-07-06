@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { WomanIcon } from "./WomanIcon"
+import React from "react";
 
 export const Header = () => {
 
