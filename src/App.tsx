@@ -1,14 +1,14 @@
 import React from 'react';
 import './App.css';
 import  { Header  } from './components/Header';
-import ReactDOM from 'react-dom/client';
 
 
-function App() {
+const App = ()  => {
   return (
     <div className="App">
       <body className="body-container">
        <p>Hello world!</p>
+       console.log("hello world!")
         <Header/>
       </body>
       
