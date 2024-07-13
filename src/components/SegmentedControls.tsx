@@ -6,7 +6,7 @@ type Props = {
 }
 
 
-export const SegmentedControls = ({width, height}: Props) => {
+export const SegmentedControlsEnglandandWalesall = ({width, height}: Props) => {
 
   return (
  <div>
