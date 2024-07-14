@@ -1,20 +1,11 @@
-import { error } from "console"
 
-const url = "https://www.gov.uk/bank-holidays.json"
 
- export const ApiRequest = async () => {
+// const url = "https://www.gov.uk/bank-holidays.json"
 
-    try {
-     const response =  await fetch(url)
-     if(!response.ok) {
-        throw new Error(`Response status: ${response.status}`);
-       
-     }
+//  export const ApiRequest = async () => {
+//    fetch('url')
+//    .then(response => response.json())
+//    .then(data => console.log(data))
+//    .catch(error => console.error(error));
 
-     const json =  await response.json()
-     console.log(json)
-    } catch(error) {
-        console.error("dorry no data");
-    }
-
- }
+//  }
