@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 
 type DataResponse = Array<DataResponse>;
 
-export const Api = () => {
+export const useDaysRequest = () => {
   const url = "https://www.gov.uk/bank-holidays.json";
 
   const data = useQuery<DataResponse>({

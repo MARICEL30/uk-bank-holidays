@@ -1,18 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import { Header } from "./components/Header";
 import { SegmentedControlsEnglandandWalesall } from "./components/SegmentedControls";
-import { useQuery } from "@tanstack/react-query";
-import { Api } from "./components/Api";
+import { useDaysRequest } from "./components/useDaysRequest";
 
-// let myArray: Array<[]> = [];
-
-// let myArray: string[] = [];
+const error = {
+  message: "This is an error",
+};
 
 type DataResponse = Array<DataResponse>;
 
 const App = () => {
-  const { isLoading, error, data } = useQuery<DataResponse>();
+  const { isLoading, error, data } = useDaysRequest();
 
   if (isLoading) return "Loading...";
 
@@ -28,7 +27,7 @@ const App = () => {
         <SegmentedControlsEnglandandWalesall width={""} height={""} />
 
         <section>
-          <h1>{data.events.title}</h1>
+          {/* <h1>{data.events.title}</h1> */}
           {/* <h1>{data["england-and-wales"].events.title}</h1> */}
           {/* //  <h1>{data["division"]}</h1> */}
         </section>
