@@ -1,4 +1,4 @@
-# Uk bbank Holidays
+# Uk bank Holidays
 
 The purpose of this projects is to build a simple web app that displays the UK upcoming bank holidays
 of the current year.
@@ -14,3 +14,6 @@ the design systen is simple as the web app does not require authentication or ex
 However, this may be added at a later date.
 
 ## Diagram
+
+
+<img width="223" alt="Screenshot 2024-08-10 at 19 19 04" src="https://github.com/user-attachments/assets/5b07f559-04ef-4e53-a2be-f82beef6f97f">
