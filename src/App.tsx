@@ -5,7 +5,7 @@ import { SegmentedControlsEnglandandWalesall } from "./components/SegmentedContr
 import { useDaysRequest } from "./components/useDaysRequest";
 
 const App = () => {
-  const { data: Days, error, isLoading } = useDaysRequest("daysData");
+  let { data: returnValues, error, isLoading } = useDaysRequest();
 
   if (isLoading) return "Loading...";
 
@@ -23,17 +23,13 @@ const App = () => {
         <SegmentedControlsEnglandandWalesall width={""} height={""} />
 
         <section>
-          {Days &&
-            Days["england-and-wales"].events.map((item: any) => (
+          {returnValues &&
+            returnValues["england-and-wales"].events.map((item: any) => (
               <div key={item.id}>
-                <h1>{item.events.title}</h1>
-                {/* <h1>{item["england-and-wales"].events.date}</h1> */}
-                <h1>{item.events.date}</h1>
+                <h1>{item["england-and-wales"].title}</h1>
+                <h1>{item["england-and-wales"].date}</h1>
               </div>
             ))}
-          {/* <h1>{data.events.title}</h1> */}
-          {/* <h1>{data["england-and-wales"].events.title}</h1> */}
-          {/* //  <h1>{data["division"]}</h1> */}
         </section>
       </body>
     </div>
