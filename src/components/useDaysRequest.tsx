@@ -1,5 +1,10 @@
 import { useQuery } from "@tanstack/react-query";
 
+// interface Props {
+//   division: string;
+//   events: Array<[]>;
+// }
+
 export const useDaysRequest = () => {
   const url = "https://www.gov.uk/bank-holidays.json";
 
@@ -7,13 +12,6 @@ export const useDaysRequest = () => {
     queryKey: ["daysData"],
     queryFn: () => fetch(url).then((res) => res.json()),
   });
-  console.log("Hello");
-  console.log(returnValues);
-  console.log(["england-and-wales"].length);
-  console.log(["england-and-wales"][0]);
-  console.log("Pura vida");
-
-  console.log("alala");
 
   return returnValues;
 };

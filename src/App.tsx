@@ -24,12 +24,14 @@ const App = () => {
 
         <section>
           {returnValues &&
-            returnValues["england-and-wales"].events.map((item: any) => (
-              <div key={item.id}>
-                <h1>{item["england-and-wales"].title}</h1>
-                <h1>{item["england-and-wales"].date}</h1>
-              </div>
-            ))}
+            returnValues["england-and-wales"].events.map((item: any) => {
+              return (
+                <ul key={item.id}>
+                  <li>{item.title}</li>
+                  <li>{item.date}</li>
+                </ul>
+              );
+            })}
         </section>
       </body>
     </div>
