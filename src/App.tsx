@@ -16,7 +16,7 @@ const App = () => {
   return (
     <div className="App">
       <body className="body-container">
-        <Header />
+        <Header title="UK Bank Holidays" />
         <br></br>
         <br></br>
         <br></br>

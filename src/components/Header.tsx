@@ -2,13 +2,17 @@ import { WomanIcon } from "./WomanIcon";
 import React from "react";
 import { Container, Icon, P } from "../Header.styled";
 
-export const Header = () => {
+type headerProps = {
+  title: string;
+};
+
+export const Header = ({ title }: headerProps) => {
   return (
     <Container>
       <Icon>
         <WomanIcon />
       </Icon>
-      <P> UK Bank Holidays</P>
+      <P> {title}</P>
     </Container>
   );
 };
