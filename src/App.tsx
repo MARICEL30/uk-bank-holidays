@@ -1,8 +1,8 @@
 import React from "react";
 import "./App.css";
 import { Header } from "./components/Header";
-import { SegmentedControlsEnglandandWalesall } from "./components/SegmentedControls";
 import { useDaysRequest } from "./components/useDaysRequest";
+import { SegmentedControls } from "./components/SegmentedControls";
 
 const App = () => {
   let { data: returnValues, error, isLoading } = useDaysRequest();
@@ -17,10 +17,7 @@ const App = () => {
     <div className="App">
       <body className="body-container">
         <Header title="UK Bank Holidays" />
-        <br></br>
-        <br></br>
-        <br></br>
-        <SegmentedControlsEnglandandWalesall width={""} height={""} />
+        <SegmentedControls width={"300px"} height={""} />
 
         <section>
           {returnValues &&

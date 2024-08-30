@@ -1,20 +1,15 @@
-import React from 'react';
+import React from "react";
 
 type Props = {
-  width: string,
-  height: string
-}
+  width: string;
+  height: string;
+};
 
-
-export const SegmentedControlsEnglandandWalesall = ({width, height}: Props) => {
-
+export const SegmentedControls = ({ width, height }: Props) => {
   return (
- <div>
-   <ul>
-    <li>England & Wales</li>
-     <li>All </li>
-   </ul>
- </div>
-)
-
-}
+    <div>
+      <button>England & Wales</button>
+      <button>All </button>
+    </div>
+  );
+};

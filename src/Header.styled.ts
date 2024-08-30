@@ -24,6 +24,6 @@ export const Icon = styled.div`
 
 export const P = styled.h1`
   font-size: 1.5rem;
-  margin-top: 300px;
+  margin-top: 250px;
   color: #000000;
 `;
