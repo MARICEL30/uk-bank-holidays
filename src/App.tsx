@@ -2,31 +2,34 @@ import React from "react";
 import "./App.css";
 import { Header } from "./components/Header";
 import { useDaysRequest } from "./components/useDaysRequest";
-import { SegmentedControls } from "./components/SegmentedControls";
+import { SegmentedControls1 } from "./components/SegmentedControls1";
 
 const App = () => {
   let { data: returnValues, error, isLoading } = useDaysRequest();
 
-  if (isLoading) return "Loading...";
+  if (isLoading) return <p> Is Loading</p>;
 
   if (error) {
-    return "An error has occurred: " + error;
+    return <p>An error has occurred!</p>;
   }
 
   return (
     <div className="App">
       <body className="body-container">
         <Header title="UK Bank Holidays" />
-        <SegmentedControls width={"300px"} height={""} />
+        <SegmentedControls1
+          firstButton="England and Wales"
+          secondButton="All"
+        />
 
         <section>
           {returnValues &&
             returnValues["england-and-wales"].events.map((item: any) => {
               return (
-                <ul key={item.id}>
-                  <li>{item.title}</li>
-                  <li>{item.date}</li>
-                </ul>
+                <div key={item.id}>
+                  <h2>{item.title}</h2>
+                  <h3>{item.date}</h3>
+                </div>
               );
             })}
         </section>

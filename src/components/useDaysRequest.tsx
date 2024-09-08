@@ -1,9 +1,9 @@
 import { useQuery } from "@tanstack/react-query";
 
-interface Props {
+type Props = {
   division: string;
   events: Array<[]>;
-}
+};
 
 export const useDaysRequest = () => {
   const url = "https://www.gov.uk/bank-holidays.json";
