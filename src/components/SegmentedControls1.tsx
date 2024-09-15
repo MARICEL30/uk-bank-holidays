@@ -1,5 +1,5 @@
 import React from "react";
-import { ButtonContainer } from "../SegmentedControls1.styled";
+import { Button, ButtonContainer } from "../SegmentedControls1.styled";
 
 type Props = {
   firstButton: string;
@@ -9,8 +9,8 @@ type Props = {
 export const SegmentedControls1 = ({ firstButton, secondButton }: Props) => {
   return (
     <ButtonContainer>
-      <button>{firstButton}</button>
-      <button>{secondButton} </button>
+      <Button>{firstButton}</Button>
+      <Button>{secondButton} </Button>
     </ButtonContainer>
   );
 };

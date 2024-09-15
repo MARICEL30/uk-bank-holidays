@@ -24,14 +24,20 @@ const App = () => {
 
         <section>
           {returnValues &&
-            returnValues["england-and-wales"].events.map((item: any) => {
-              return (
-                <div key={item.id}>
-                  <h2>{item.title}</h2>
-                  <h3>{item.date}</h3>
-                </div>
-              );
-            })}
+            returnValues["england-and-wales"].events
+              .slice(65)
+              .map((item: any) => {
+                let currentDate = new Date().toJSON().slice(0, 10);
+                let newArray = [...returnValues["england-and-wales"].events];
+                // currentDate = newArray[65].date;
+
+                return (
+                  <div key={item.id}>
+                    <h2>{item.title}</h2>
+                    <h3>{item.date}</h3>
+                  </div>
+                );
+              })}
         </section>
       </body>
     </div>
@@ -39,3 +45,6 @@ const App = () => {
 };
 
 export default App;
+
+// check what day is today
+//according to todays date return an array with the dates starting from today date

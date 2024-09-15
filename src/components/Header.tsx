@@ -9,10 +9,10 @@ type headerProps = {
 export const Header = ({ title }: headerProps) => {
   return (
     <Container>
+      <P> {title}</P>
       <Icon>
         <WomanIcon />
       </Icon>
-      <P> {title}</P>
     </Container>
   );
 };
