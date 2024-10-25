@@ -5,8 +5,11 @@ type Props = {
   events: Array<[]>;
 };
 
+const todaysDate = new Date();
+
 export const useDaysRequest = () => {
   const url = "https://www.gov.uk/bank-holidays.json";
+  console.log(todaysDate.toDateString());
 
   let returnValues = useQuery({
     queryKey: ["daysData"],

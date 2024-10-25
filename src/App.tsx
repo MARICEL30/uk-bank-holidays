@@ -25,7 +25,7 @@ const App = () => {
         <section>
           {returnValues &&
             returnValues["england-and-wales"].events
-              .slice(65)
+              // .slice(65)
               .map((item: any) => {
                 let currentDate = new Date().toJSON().slice(0, 10);
                 let newArray = [...returnValues["england-and-wales"].events];
