@@ -27,9 +27,10 @@ const App = () => {
             returnValues["england-and-wales"].events
               // .slice(65)
               .map((item: any) => {
-                let currentDate = new Date().toJSON().slice(0, 10);
-                let newArray = [...returnValues["england-and-wales"].events];
-                // currentDate = newArray[65].date;
+                const todaysDate = new Date().toISOString().split("T")[0];
+                console.log(returnValues["england-and-wales"].events[0].date);
+
+                // let newArray = ...returnValues["england-and-wales"].events.date;
 
                 return (
                   <div key={item.id}>
