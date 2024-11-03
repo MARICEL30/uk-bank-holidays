@@ -7,6 +7,12 @@ import { SegmentedControls1 } from "./components/SegmentedControls1";
 const App = () => {
   let { data: returnValues, error, isLoading } = useDaysRequest();
 
+  let todaysDate = new Date().toISOString().split("T")[0];
+
+  // const index = newArray.filter(
+  //   (item: { date: string }) => item.date === todaysDate
+  // );
+
   if (isLoading) return <p> Is Loading</p>;
 
   if (error) {
@@ -25,13 +31,15 @@ const App = () => {
         <section>
           {returnValues &&
             returnValues["england-and-wales"].events
-              // .slice(65)
+              // .slice(index)
               .map((item: any) => {
-                const todaysDate = new Date().toISOString().split("T")[0];
-                console.log(returnValues["england-and-wales"].events[0].date);
+                const newArray = returnValues["england-and-wales"].events.map(
+                  ({ date }: any) => ({
+                    date,
+                  })
+                );
 
-                // let newArray = ...returnValues["england-and-wales"].events.date;
-
+                console.log(newArray);
                 return (
                   <div key={item.id}>
                     <h2>{item.title}</h2>
@@ -48,4 +56,7 @@ const App = () => {
 export default App;
 
 // check what day is today
+//convert today's date into the right string date
+//Check the property date in every object in the array events
+// iterate trhough every property date
 //according to todays date return an array with the dates starting from today date
