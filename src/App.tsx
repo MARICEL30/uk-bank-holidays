@@ -7,12 +7,6 @@ import { SegmentedControls1 } from "./components/SegmentedControls1";
 const App = () => {
   let { data: returnValues, error, isLoading } = useDaysRequest();
 
-  let todaysDate = new Date().toISOString().split("T")[0];
-
-  // const index = newArray.filter(
-  //   (item: { date: string }) => item.date === todaysDate
-  // );
-
   if (isLoading) return <p> Is Loading</p>;
 
   if (error) {
@@ -30,23 +24,21 @@ const App = () => {
 
         <section>
           {returnValues &&
-            returnValues["england-and-wales"].events
-              // .slice(index)
-              .map((item: any) => {
-                const newArray = returnValues["england-and-wales"].events.map(
-                  ({ date }: any) => ({
-                    date,
-                  })
-                );
+            returnValues["england-and-wales"].events.map((item: any) => {
+              let todaysDate = new Date().toISOString().split("T")[0];
 
-                console.log(newArray);
+              let datesArray = returnValues["england-and-wales"].events.map(
+                (date: any) => date
+              );
+
+              if (item.date > todaysDate)
                 return (
                   <div key={item.id}>
                     <h2>{item.title}</h2>
-                    <h3>{item.date}</h3>
+                    <h3>{item.date} </h3>
                   </div>
                 );
-              })}
+            })}
         </section>
       </body>
     </div>
