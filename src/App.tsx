@@ -18,8 +18,8 @@ const App = () => {
       <body className="body-container">
         <Header title="UK Bank Holidays" />
         <SegmentedControls1
-          firstButton="England and Wales"
-          secondButton="All"
+          firstSegment="England and Wales"
+          secondSegment="All"
         />
 
         <section>
