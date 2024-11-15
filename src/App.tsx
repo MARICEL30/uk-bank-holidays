@@ -2,7 +2,12 @@ import React from "react";
 import "./App.css";
 import { Header } from "./components/Header";
 import { useDaysRequest } from "./components/useDaysRequest";
-import { SegmentedControls1 } from "./components/SegmentedControls1";
+import { SegmentedControls } from "./components/SegmentedControls";
+
+const segments = [
+  { key: 1, value: "England and Wales" },
+  { key: 2, value: "All" },
+];
 
 const App = () => {
   let { data: returnValues, error, isLoading } = useDaysRequest();
@@ -17,9 +22,23 @@ const App = () => {
     <div className="App">
       <body className="body-container">
         <Header title="UK Bank Holidays" />
-        <SegmentedControls1
-          firstSegment="England and Wales"
-          secondSegment="All"
+        <SegmentedControls
+          name={""}
+          selectedValue={function (): void {
+            throw new Error("Function not implemented.");
+          }}
+          segments={[
+            {
+              key: 1,
+              value: "England and Wales",
+              label: "",
+            },
+            {
+              key: 2,
+              value: "All",
+              label: "",
+            },
+          ]}
         />
 
         <section>
@@ -27,9 +46,9 @@ const App = () => {
             returnValues["england-and-wales"].events.map((item: any) => {
               let todaysDate = new Date().toISOString().split("T")[0];
 
-              let datesArray = returnValues["england-and-wales"].events.map(
-                (date: any) => date
-              );
+              // let datesArray = returnValues["england-and-wales"].events.map(
+              //   (date: any) => date
+              // );
 
               if (item.date > todaysDate)
                 return (
