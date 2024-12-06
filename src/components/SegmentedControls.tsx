@@ -1,29 +1,24 @@
 import React from "react";
-import {
-  SegmentedControlsContainer,
-  Segments,
-} from "../SegmentedControlsContainer.styled";
+import { SegmentsContainer } from "../SegmentsContainer.styled";
 
 type Props = {
+  onChange: () => void;
   name: string;
-  selectedValue: () => void;
   segments: Array<{
-    value: string | number | readonly string[] | undefined;
+    value: string;
     key: React.Key | null | undefined;
     label: string;
   }>;
 };
 
-export const SegmentedControls = ({ name, selectedValue, segments }: Props) => {
+export const SegmentedControls = ({ onChange, name, segments }: Props) => {
   return (
-    <SegmentedControlsContainer>
-      <Segments>
-        {segments.map((item) => (
-          <div>
-            <input key={item.key} value={item.value}></input>
-          </div>
-        ))}
-      </Segments>
-    </SegmentedControlsContainer>
+    <SegmentsContainer>
+      {segments.map((item) => (
+        <button onChange={() => {}}>
+          <label>{item.value}</label>
+        </button>
+      ))}
+    </SegmentsContainer>
   );
 };

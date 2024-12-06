@@ -1,16 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import { Header } from "./components/Header";
 import { useDaysRequest } from "./components/useDaysRequest";
 import { SegmentedControls } from "./components/SegmentedControls";
 
-const segments = [
-  { key: 1, value: "England and Wales" },
-  { key: 2, value: "All" },
-];
-
 const App = () => {
   let { data: returnValues, error, isLoading } = useDaysRequest();
+  const [segmentsValue, setsegmentsValue] = useState("England and Wales");
 
   if (isLoading) return <p> Is Loading</p>;
 
@@ -23,20 +19,23 @@ const App = () => {
       <body className="body-container">
         <Header title="UK Bank Holidays" />
         <SegmentedControls
-          name={""}
-          selectedValue={function (): void {
-            throw new Error("Function not implemented.");
-          }}
+          name=""
+          onChange={() => setsegmentsValue(segmentsValue)}
           segments={[
             {
               key: 1,
               value: "England and Wales",
-              label: "",
+              label: "England and Wales",
             },
             {
               key: 2,
-              value: "All",
-              label: "",
+              value: "Scotland",
+              label: "Scotland",
+            },
+            {
+              key: 3,
+              value: "Northern-Ireland",
+              label: "Northern-Ireland",
             },
           ]}
         />
@@ -45,10 +44,6 @@ const App = () => {
           {returnValues &&
             returnValues["england-and-wales"].events.map((item: any) => {
               let todaysDate = new Date().toISOString().split("T")[0];
-
-              // let datesArray = returnValues["england-and-wales"].events.map(
-              //   (date: any) => date
-              // );
 
               if (item.date > todaysDate)
                 return (
