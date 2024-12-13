@@ -3,6 +3,7 @@ import "./App.css";
 import { Header } from "./components/Header";
 import { useDaysRequest } from "./components/useDaysRequest";
 import { SegmentedControls } from "./components/SegmentedControls";
+import { Card, CardContainer } from "./Card.styled";
 
 const App = () => {
   let { data: returnValues, error, isLoading } = useDaysRequest();
@@ -20,7 +21,7 @@ const App = () => {
         <Header title="UK Bank Holidays" />
         <SegmentedControls
           name=""
-          onChange={() => setsegmentsValue(segmentsValue)}
+          onChange={() => setsegmentsValue("hello world")}
           segments={[
             {
               key: 1,
@@ -47,10 +48,12 @@ const App = () => {
 
               if (item.date > todaysDate)
                 return (
-                  <div key={item.id}>
-                    <h2>{item.title}</h2>
-                    <h3>{item.date} </h3>
-                  </div>
+                  <CardContainer>
+                    <Card key={item.id}>
+                      <h2>{item.title}</h2>
+                      <h3>{item.date} </h3>
+                    </Card>
+                  </CardContainer>
                 );
             })}
         </section>
