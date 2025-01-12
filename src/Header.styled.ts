@@ -9,13 +9,6 @@ export const Container = styled.div`
 `;
 
 export const Icon = styled.div`
-  border-radius: 50%;
-  background: rgb(238, 174, 202);
-  background: radial-gradient(
-    circle,
-    rgba(238, 174, 202, 1) 0%,
-    rgba(148, 187, 233, 1) 100%
-  );
   width: 350px;
   height: 350px;
   margin: 0 auto;
@@ -24,6 +17,7 @@ export const Icon = styled.div`
 
 export const P = styled.h1`
   font-size: 1.5rem;
-  margin-top: 20px;
+  margin-top: 10px;
+  margin-bottom: -100px;
   color: #000000;
 `;

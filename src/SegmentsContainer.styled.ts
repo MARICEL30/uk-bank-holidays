@@ -6,7 +6,7 @@ export const SegmentsContainer = styled.div`
   align-items: center;
   margin: 200px 10px auto;
   max-width: 500px;
-
+  height: 40px;
   border-radius: 25px;
   background: rgb(63, 94, 251);
   background: radial-gradient(
@@ -16,13 +16,12 @@ export const SegmentsContainer = styled.div`
   );
 `;
 
-export const ButtonContainer = styled.section`
-  min-height: 30px;
-  margin-top: 0.5rem;
+export const Button = styled.section`
+  min-height: 20px;
   color: #fff;
 `;
 
-export const Text = styled.text`
+export const Label = styled.p`
   cursor: pointer;
   padding: 0.5rem;
 `;

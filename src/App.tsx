@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import "./App.css";
 import { Header } from "./components/Header";
 import { useDaysRequest } from "./components/useDaysRequest";
-import { SegmentedControls } from "./components/SegmentedControls";
+import { SegmentedControls, segments } from "./components/SegmentedControls";
 import { Card, CardContainer } from "./Card.styled";
 
 const App = () => {
   let { data: returnValues, error, isLoading } = useDaysRequest();
-  const [segmentsValue, setsegmentsValue] = useState("England and Wales");
+
+  const [segmentsValue, setsegmentsValue] = useState(true);
 
   if (isLoading) return <p> Is Loading</p>;
 
@@ -19,30 +20,16 @@ const App = () => {
     <div className="App">
       <body className="body-container">
         <Header title="UK Bank Holidays" />
+
         <SegmentedControls
-          name=""
-          onChange={() => setsegmentsValue("hello world")}
-          segments={[
-            {
-              key: 1,
-              value: "England and Wales",
-              label: "England and Wales",
-            },
-            {
-              key: 2,
-              value: "Scotland",
-              label: "Scotland",
-            },
-            {
-              key: 3,
-              value: "Northern-Ireland",
-              label: "Northern-Ireland",
-            },
-          ]}
+          name="buttons"
+          segments={segments}
+          onClick={() => setsegmentsValue(!segmentsValue)}
         />
 
         <section>
           {returnValues &&
+            // eslint-disable-next-line array-callback-return
             returnValues["england-and-wales"].events.map((item: any) => {
               let todaysDate = new Date().toISOString().split("T")[0];
 
