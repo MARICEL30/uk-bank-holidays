@@ -16,6 +16,9 @@ export const Icon = styled.div`
 `;
 
 export const P = styled.h1`
+  font-family: "Montserrat", serif;
+  font-weight: 600;
+  font-style: normal;
   font-size: 1.5rem;
   margin-top: 10px;
   margin-bottom: -100px;

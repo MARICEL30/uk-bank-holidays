@@ -3,12 +3,18 @@ import "./App.css";
 import { Header } from "./components/Header";
 import { useDaysRequest } from "./components/useDaysRequest";
 import { SegmentedControls, segments } from "./components/SegmentedControls";
-import { Card, CardContainer } from "./Card.styled";
+import {
+  Card,
+  CardContainer,
+  CardFirstHeader,
+  CardSecondHeader,
+  CardThirdHeader,
+} from "./Card.styled";
 
 const App = () => {
   let { data: returnValues, error, isLoading } = useDaysRequest();
 
-  const [segmentsValue, setsegmentsValue] = useState(true);
+  const [segmentsValue, setsegmentsValue] = useState("England and Wales");
 
   if (isLoading) return <p> Is Loading</p>;
 
@@ -24,7 +30,7 @@ const App = () => {
         <SegmentedControls
           name="buttons"
           segments={segments}
-          onClick={() => setsegmentsValue(!segmentsValue)}
+          onClick={() => setsegmentsValue(segmentsValue)}
         />
 
         <section>
@@ -37,8 +43,9 @@ const App = () => {
                 return (
                   <CardContainer>
                     <Card key={item.id}>
-                      <h2>{item.title}</h2>
-                      <h3>{item.date} </h3>
+                      <CardFirstHeader>Next Bank Holiday: </CardFirstHeader>
+                      <CardSecondHeader>{item.title}</CardSecondHeader>
+                      <CardThirdHeader>{item.date} </CardThirdHeader>
                     </Card>
                   </CardContainer>
                 );

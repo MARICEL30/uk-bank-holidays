@@ -8,16 +8,13 @@ export const SegmentsContainer = styled.div`
   max-width: 500px;
   height: 40px;
   border-radius: 25px;
-  background: rgb(63, 94, 251);
-  background: radial-gradient(
-    circle,
-    rgba(63, 94, 251, 1) 0%,
-    rgba(252, 70, 107, 1) 100%
+  background: #9357f1;
   );
 `;
 
 export const Button = styled.section`
   min-height: 20px;
+  font-family: "Fira Sans", serif;
   color: #fff;
 `;
 

@@ -1,10 +1,19 @@
 import React from "react";
+import {
+  CardContainer,
+  CardFirstHeader,
+  CardSecondHeader,
+  CardThirdHeader,
+} from "../Card.styled";
 
 export const Card = (props: any) => {
   return (
-    <div>
-      <h2></h2>
-      <h3></h3>
-    </div>
+    <CardContainer>
+      <Card>
+        <CardFirstHeader />
+        <CardSecondHeader />
+        <CardThirdHeader />
+      </Card>
+    </CardContainer>
   );
 };

@@ -41,7 +41,7 @@ export const SegmentedControls = ({ name, segments, onClick }: Props) => {
   return (
     <SegmentsContainer>
       {segments.map((item) => (
-        <Button onClick={() => console.log("Lavida")}>
+        <Button onClick={() => console.log(item.value)}>
           <Label key={item.key}>{item.value}</Label>
         </Button>
       ))}
