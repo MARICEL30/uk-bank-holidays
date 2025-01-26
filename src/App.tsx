@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 import { Header } from "./components/Header";
-import { useDaysRequest } from "./components/useDaysRequest";
+import { useDaysRequest } from "./api/useDaysRequest";
 import { SegmentedControls, segments } from "./components/SegmentedControls";
 import {
   Card,

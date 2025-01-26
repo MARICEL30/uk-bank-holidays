@@ -6,13 +6,13 @@ import {
   CardSecondHeader,
   CardThirdHeader,
 } from "../Card.styled";
-import { useDaysRequest } from "./useDaysRequest";
+import { useDaysRequest } from "../api/useDaysRequest";
 
 export const ScotlandData = () => {
-  let { data: returnValues, error, isLoading } = useDaysRequest();
+  let { data: DataResponse, error, isLoading } = useDaysRequest();
   const [segmentsValue, setsegmentsValue] = useState("Scotland");
 
-  if (isLoading) return <p> Is Loading</p>;
+  if (isLoading && !DataResponse) return <p> Is Loading</p>;
 
   if (error) {
     return <p>An error has occurred!</p>;
@@ -20,22 +20,24 @@ export const ScotlandData = () => {
 
   return (
     <section>
-      {returnValues &&
+      {DataResponse &&
         // eslint-disable-next-line array-callback-return
-        returnValues["Scotland"].events.map((item: any) => {
-          let todaysDate = new Date().toISOString().split("T")[0];
+        DataResponse.division["Scotland"].events.map(
+          ({ item }: typeof DataResponse) => {
+            let todaysDate = new Date().toISOString().split("T")[0];
 
-          if (item.date > todaysDate)
-            return (
-              <CardContainer>
-                <Card key={item.id}>
-                  <CardFirstHeader>Next Bank Holiday: </CardFirstHeader>
-                  <CardSecondHeader>{item.title}</CardSecondHeader>
-                  <CardThirdHeader>{item.date} </CardThirdHeader>
-                </Card>
-              </CardContainer>
-            );
-        })}
+            if (item.date > todaysDate)
+              return (
+                <CardContainer>
+                  <Card key={item.id}>
+                    <CardFirstHeader>Next Bank Holiday: </CardFirstHeader>
+                    <CardSecondHeader>{item.title}</CardSecondHeader>
+                    <CardThirdHeader>{item.date} </CardThirdHeader>
+                  </Card>
+                </CardContainer>
+              );
+          }
+        )}
     </section>
   );
 };
