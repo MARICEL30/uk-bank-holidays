@@ -1,7 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
+import { Key, ReactNode } from "react";
 
-type DataResponse = {
-  division: string;
+export type DataResponse = {
+  division: "england-and-wales" | "scotland" | "northern-ireland";
   events: Array<[]>;
 };
 
