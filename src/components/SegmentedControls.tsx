@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { Label, SegmentsContainer, Button } from "../SegmentsContainer.styled";
+import { ScotlandData } from "./ScotlandData";
 
 type Props = {
   name: string;
@@ -38,13 +39,21 @@ export const segments = [
 ];
 
 export const SegmentedControls = ({ name, segments, onClick }: Props) => {
+  // const [segmentsValue, setsegmentsValue] = useState(segments[0].value);
+
   return (
     <SegmentsContainer>
       {segments.map((item) => (
-        <Button onClick={() => console.log(item.value)}>
-          <Label key={item.key}>{item.value}</Label>
-        </Button>
+        <div>
+          <label key={item.key} htmlFor={item.label}>
+            {item.label}
+          </label>
+
+          <input name={item.value} onClick={() => console.log(item.value)} />
+        </div>
       ))}
     </SegmentsContainer>
   );
 };
+// <input type="radio" id="contactChoice2" name="contact" value="phone" />
+// <label for="contactChoice2">Phone</label>

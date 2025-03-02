@@ -14,7 +14,8 @@ import {
 const App = () => {
   let { data: returnValues, error, isLoading } = useDaysRequest();
 
-  const [segmentsValue, setsegmentsValue] = useState("England and Wales");
+  const [segmentsValue, setsegmentsValue] = useState(returnValues);
+  const [checked, setchecked] = useState(true);
 
   if (isLoading) return <p> Is Loading</p>;
 
@@ -30,7 +31,15 @@ const App = () => {
         <SegmentedControls
           name="buttons"
           segments={segments}
-          onClick={() => setsegmentsValue(segmentsValue)}
+          onClick={() =>
+            setsegmentsValue(
+              returnValues["england-and-wales"]
+                ? segments[0].value
+                : segments[1].value
+                ? segments[2].value
+                : null
+            )
+          }
         />
 
         <section>
