@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const SegmentsContainer = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   margin: 200px 10px;
   min-width: 500px;
