@@ -1,15 +1,22 @@
 import React, { useState } from "react";
-import { Label, SegmentsContainer, Button } from "../SegmentsContainer.styled";
+import {
+  Label,
+  RadioGroup,
+  SegmentsContainer,
+} from "../SegmentsContainer.styled";
+import { EnglandAndWalesData } from "./EnglandAndWalesData";
 import { ScotlandData } from "./ScotlandData";
+import { NorthernIrelandData } from "./NorthernIrelandData";
 
 type Props = {
   name: string;
-  onClick: () => void;
+  onChange: () => void;
   segments: Array<{
     value: string;
     key: number;
     label: string;
   }>;
+  defaultValue?: number;
 };
 
 export const segments = [
@@ -38,22 +45,32 @@ export const segments = [
   },
 ];
 
-export const SegmentedControls = ({ name, segments, onClick }: Props) => {
-  // const [segmentsValue, setsegmentsValue] = useState(segments[0].value);
+export const SegmentedControls = ({
+  name,
+  segments,
+  onChange,
+  defaultValue = 0,
+}: Props) => {
+  const divStyle = { color: "blue" };
+  const [value, setValue] = useState<string>(segments[defaultValue].value);
 
   return (
     <SegmentsContainer>
       {segments.map((item) => (
-        <div>
+        <RadioGroup>
+          <input
+            type="radio"
+            value={item.value}
+            id={item.label}
+            name={name}
+            onChange={() => console.log(item.value)}
+          />
+
           <label key={item.key} htmlFor={item.label}>
             {item.label}
           </label>
-
-          <input name={item.value} onClick={() => console.log(item.value)} />
-        </div>
+        </RadioGroup>
       ))}
     </SegmentsContainer>
   );
 };
-// <input type="radio" id="contactChoice2" name="contact" value="phone" />
-// <label for="contactChoice2">Phone</label>
