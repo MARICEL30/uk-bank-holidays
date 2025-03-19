@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import {
+  Input,
   Label,
   RadioGroup,
   SegmentsContainer,
@@ -51,24 +52,28 @@ export const SegmentedControls = ({
   onChange,
   defaultValue = 0,
 }: Props) => {
-  const divStyle = { color: "blue" };
   const [value, setValue] = useState<string>(segments[defaultValue].value);
+
+  const setActiveSegmentValue = (value: string) => {
+    setValue(value);
+  };
 
   return (
     <SegmentsContainer>
       {segments.map((item) => (
-        <RadioGroup>
-          <input
+        <RadioGroup key={item.value}>
+          <Input
             type="radio"
             value={item.value}
+            defaultValue={0}
             id={item.label}
             name={name}
-            onChange={() => console.log(item.value)}
+            onChange={() => setActiveSegmentValue(item.value)}
           />
 
-          <label key={item.key} htmlFor={item.label}>
+          <Label key={item.key} htmlFor={item.label}>
             {item.label}
-          </label>
+          </Label>
         </RadioGroup>
       ))}
     </SegmentsContainer>
