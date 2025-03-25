@@ -1,0 +1,1 @@
+export { EnglandAndWalesData } from "./EnglandAndWalesData";

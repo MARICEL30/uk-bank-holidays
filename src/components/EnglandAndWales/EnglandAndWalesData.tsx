@@ -5,8 +5,8 @@ import {
   CardFirstHeader,
   CardSecondHeader,
   CardThirdHeader,
-} from "../Card.styled";
-import { useDaysRequest } from "../api/useDaysRequest";
+} from "../../Card.styled";
+import { useDaysRequest } from "../../api/useDaysRequest";
 
 type ReturnProps = {
   id: string;

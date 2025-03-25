@@ -5,19 +5,19 @@ import {
   RadioGroup,
   SegmentsContainer,
 } from "../SegmentsContainer.styled";
-import { EnglandAndWalesData } from "./EnglandAndWalesData";
+import { EnglandAndWalesData } from "./EnglandAndWales/EnglandAndWalesData";
 import { ScotlandData } from "./ScotlandData";
 import { NorthernIrelandData } from "./NorthernIrelandData";
 
 type Props = {
   name: string;
-  onChange: () => void;
+  onChange: (value: string) => void;
   segments: Array<{
-    value: string;
     key: number;
+    value: string;
     label: string;
   }>;
-  defaultValue?: number;
+  defaultIndex?: number;
 };
 
 export const segments = [
@@ -49,26 +49,27 @@ export const segments = [
 export const SegmentedControls = ({
   name,
   segments,
-  onChange,
-  defaultValue = 0,
+  defaultIndex = 0,
 }: Props) => {
-  const [value, setValue] = useState<string>(segments[defaultValue].value);
-
-  const setActiveSegmentValue = (value: string) => {
-    setValue(value);
-  };
+  const [value, setValue] = useState<string>(segments[defaultIndex].value);
+  const [showList, setShowList] = useState<string[]>([]);
 
   return (
     <SegmentsContainer>
       {segments.map((item) => (
-        <RadioGroup key={item.value}>
+        <RadioGroup key={item.key}>
           <Input
             type="radio"
             value={item.value}
-            defaultValue={0}
             id={item.label}
             name={name}
-            onChange={() => setActiveSegmentValue(item.value)}
+            onChange={() => {
+              if (showList.includes(item.value)) {
+                setShowList([]);
+              } else {
+                setShowList([item.value]);
+              }
+            }}
           />
 
           <Label key={item.key} htmlFor={item.label}>

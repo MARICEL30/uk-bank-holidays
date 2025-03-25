@@ -2,14 +2,15 @@ import React, { useState } from "react";
 import "./App.css";
 import { Header } from "./components/Header";
 import { SegmentedControls, segments } from "./components/SegmentedControls";
-import { EnglandAndWalesData } from "./components/EnglandAndWalesData";
+import { EnglandAndWalesData } from "./components/EnglandAndWales/EnglandAndWalesData";
 import { useDaysRequest } from "./api";
+import { ScotlandData } from "./components/ScotlandData";
+import { NorthernIrelandData } from "./components/NorthernIrelandData";
 
 const App = () => {
   let { data: returnValues, error, isLoading } = useDaysRequest();
 
-  const defaultValue = 0;
-  const [value, setValue] = useState<string>(segments[defaultValue].value);
+  const [value, setValue] = useState<string>(segments[0].value);
 
   if (isLoading) return <p> Is Loading</p>;
 
@@ -25,13 +26,12 @@ const App = () => {
           name="buttons"
           segments={segments}
           onChange={() => setValue(value)}
-          defaultValue={0}
+          defaultIndex={0}
         />
-        {/* {returnValues === "england-and-wales"}
 
-        <div>
-          <EnglandAndWalesData />
-        </div> */}
+        {value === "england-and-wales" ? (
+          <EnglandAndWalesData id={"id"} date={"date"} title={"title"} />
+        ) : null}
       </body>
     </div>
   );
@@ -44,3 +44,6 @@ export default App;
 //Check the property date in every object in the array events
 // iterate trhough every property date
 //according to todays date return an array with the dates starting from today date
+
+//Implement the segmented controls
+//Render the data according to the segmented controls values
