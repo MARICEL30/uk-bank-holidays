@@ -14,15 +14,10 @@ type ReturnProps = {
   title: string;
 };
 
-// type ScotlandDataProps = {
-//   division: "scotland";
-//   events: Array<[]>;
-// };
-
 export const ScotlandData = () => {
-  let { data: ScotlandProps, error, isLoading } = useDaysRequest();
+  let { data: ReturnApiProps, error, isLoading } = useDaysRequest();
 
-  if (isLoading && !ScotlandProps) return <p> Is Loading</p>;
+  if (isLoading && !ReturnApiProps) return <p> Is Loading</p>;
 
   if (error) {
     return <p>An error has occurred!</p>;
@@ -31,9 +26,9 @@ export const ScotlandData = () => {
   return (
     <section>
       <h1> Scotland Data</h1>
-      {ScotlandProps &&
+      {ReturnApiProps?.["scotland"] &&
         // eslint-disable-next-line array-callback-return
-        ScotlandProps.division["scotland"].events.map((item: ReturnProps) => {
+        ReturnApiProps["scotland"].events.map((item: ReturnProps) => {
           let todaysDate = new Date().toISOString().split("T")[0];
 
           if (item.date && item.date > todaysDate)

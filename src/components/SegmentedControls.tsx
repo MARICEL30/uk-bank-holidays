@@ -56,27 +56,23 @@ export const SegmentedControls = ({
 
   return (
     <SegmentsContainer>
-      {segments.map((item) => (
-        <RadioGroup key={item.key}>
-          <Input
-            type="radio"
-            value={item.value}
-            id={item.label}
-            name={name}
-            onChange={() => {
-              if (showList.includes(item.value)) {
-                setShowList([]);
-              } else {
-                setShowList([item.value]);
-              }
-            }}
-          />
+      {segments.map((item) => {
+        return (
+          <RadioGroup key={item.key}>
+            <Input
+              type="radio"
+              value={item.value}
+              id={item.label}
+              name={name}
+              onChange={() => console.log(item.value)}
+            />
 
-          <Label key={item.key} htmlFor={item.label}>
-            {item.label}
-          </Label>
-        </RadioGroup>
-      ))}
+            <Label key={item.key} htmlFor={item.label}>
+              {item.label}
+            </Label>
+          </RadioGroup>
+        );
+      })}
     </SegmentsContainer>
   );
 };

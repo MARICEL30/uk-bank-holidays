@@ -25,13 +25,12 @@ const App = () => {
         <SegmentedControls
           name="buttons"
           segments={segments}
-          onChange={() => setValue(value)}
+          onChange={() => {
+            setValue(value);
+          }}
           defaultIndex={0}
         />
-
-        {value === "england-and-wales" ? (
-          <EnglandAndWalesData id={"id"} date={"date"} title={"title"} />
-        ) : null}
+        <EnglandAndWalesData events={[]} date={""} title={""} id={0} />
       </body>
     </div>
   );

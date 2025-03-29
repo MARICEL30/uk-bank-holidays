@@ -9,15 +9,21 @@ import {
 import { useDaysRequest } from "../../api/useDaysRequest";
 
 type ReturnProps = {
-  id: string;
+  events: Array<{}>;
   date: string;
   title: string;
+  id: number;
 };
 
-export const EnglandAndWalesData = ({ id, date, title }: ReturnProps) => {
-  let { data: EnglandAndWales, error, isLoading } = useDaysRequest();
+export const EnglandAndWalesData = ({
+  events,
+  date,
+  title,
+  id,
+}: ReturnProps) => {
+  let { data: ReturnApiprops, error, isLoading } = useDaysRequest();
 
-  if (isLoading && !EnglandAndWales) return <p> Is Loading</p>;
+  if (isLoading && !ReturnApiprops) return <p> Is Loading</p>;
 
   if (error) {
     return <p>An error has occurred!</p>;
@@ -26,24 +32,22 @@ export const EnglandAndWalesData = ({ id, date, title }: ReturnProps) => {
   return (
     <section>
       <h1> England data</h1>
-      {EnglandAndWales &&
+      {ReturnApiprops?.["england-and-wales"] &&
         // eslint-disable-next-line array-callback-return
-        EnglandAndWales.division["england-and-wales"].events.map(
-          (item: ReturnProps) => {
-            let todaysDate = new Date().toISOString().split("T")[0];
+        ReturnApiprops["england-and-wales"].events.map((item: ReturnProps) => {
+          let todaysDate = new Date().toISOString().split("T")[0];
 
-            if (item.date && item.date > todaysDate)
-              return (
-                <CardContainer>
-                  <Card key={item.id}>
-                    <CardFirstHeader>Next Bank Holiday: </CardFirstHeader>
-                    <CardSecondHeader>{item.title}</CardSecondHeader>
-                    <CardThirdHeader>{item.date} </CardThirdHeader>
-                  </Card>
-                </CardContainer>
-              );
-          }
-        )}
+          if (item.date && item.date > todaysDate)
+            return (
+              <CardContainer>
+                <Card key={item.id}>
+                  <CardFirstHeader>Next Bank Holiday: </CardFirstHeader>
+                  <CardSecondHeader>{item.title}</CardSecondHeader>
+                  <CardThirdHeader>{item.date} </CardThirdHeader>
+                </Card>
+              </CardContainer>
+            );
+        })}
     </section>
   );
 };
