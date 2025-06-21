@@ -1,0 +1,1 @@
+export { ScotlandData } from "./ScotlandData";

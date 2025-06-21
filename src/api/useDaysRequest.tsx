@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 
-type ReturnApiProps = {
+export type ReturnApiProps = {
   "england-and-wales": {
     division: "england-and-wales";
     events: [];

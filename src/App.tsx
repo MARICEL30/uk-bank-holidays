@@ -1,16 +1,17 @@
 import React, { useState } from "react";
 import "./App.css";
 import { Header } from "./components/Header";
-import { SegmentedControls, segments } from "./components/SegmentedControls";
+import { ButtonsContainer, segments } from "./components/ButtonsContainer";
 import { EnglandAndWalesData } from "./components/EnglandAndWales/EnglandAndWalesData";
 import { useDaysRequest } from "./api";
-import { ScotlandData } from "./components/ScotlandData";
-import { NorthernIrelandData } from "./components/NorthernIrelandData";
+import { ScotlandData } from "./components/Scotland/ScotlandData";
+import { NorthernIrelandData } from "./components/NorthernIreland/NorthernIrelandData";
 
 const App = () => {
   let { data: returnValues, error, isLoading } = useDaysRequest();
 
-  const [value, setValue] = useState<string>(segments[0].value);
+  const [value, setValue] = useState("");
+  const [showList, setShowList] = useState(false);
 
   if (isLoading) return <p> Is Loading</p>;
 
@@ -22,15 +23,25 @@ const App = () => {
     <div className="App">
       <body className="body-container">
         <Header title="UK Bank Holidays" />
-        <SegmentedControls
-          name="buttons"
+        <ButtonsContainer
+          name=""
           segments={segments}
-          onChange={() => {
+          onClick={() => {
             setValue(value);
           }}
-          defaultIndex={0}
         />
-        <EnglandAndWalesData events={[]} date={""} title={""} id={0} />
+        <div className="data-container">
+          {value === "england-and-wales" && (
+            <EnglandAndWalesData
+              events={returnValues?.["england-and-wales"].events || []}
+              date={""}
+              title={""}
+              id={0}
+            />
+          )}
+          {value === "scotland" && <ScotlandData />}
+          {value === "northern-ireland" && <NorthernIrelandData />}
+        </div>
       </body>
     </div>
   );

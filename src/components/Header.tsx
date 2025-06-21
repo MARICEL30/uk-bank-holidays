@@ -1,6 +1,6 @@
 import { WomanIcon } from "./WomanIcon";
 import React from "react";
-import { Container, Icon, P } from "../Header.styled";
+import { Container, Icon, P } from "./Header.styled";
 
 type headerProps = {
   title: string;

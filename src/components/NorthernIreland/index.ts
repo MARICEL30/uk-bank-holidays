@@ -1,0 +1,1 @@
+export { NorthernIrelandData } from "./NorthernIrelandData";

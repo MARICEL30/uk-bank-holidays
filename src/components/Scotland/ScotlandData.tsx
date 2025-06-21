@@ -5,10 +5,11 @@ import {
   CardFirstHeader,
   CardSecondHeader,
   CardThirdHeader,
-} from "../Card.styled";
-import { useDaysRequest } from "../api/useDaysRequest";
+} from "../../assets/Card.styled";
+import { useDaysRequest } from "../../api/useDaysRequest";
 
 type ReturnProps = {
+  events: Array<{}>;
   id: string;
   date: string;
   title: string;
