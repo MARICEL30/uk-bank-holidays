@@ -11,7 +11,6 @@ const App = () => {
   let { data: returnValues, error, isLoading } = useDaysRequest();
 
   const [value, setValue] = useState("");
-  const [showList, setShowList] = useState(false);
 
   if (isLoading) return <p> Is Loading</p>;
 
@@ -55,5 +54,5 @@ export default App;
 // iterate trhough every property date
 //according to todays date return an array with the dates starting from today date
 
-//Implement the segmented controls
-//Render the data according to the segmented controls values
+//Implement the buttons controls
+//Render the data according to the buttons controls values

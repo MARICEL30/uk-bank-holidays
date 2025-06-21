@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ButtonGroup } from "./ButtonsContainer.styled";
+import { Button, ButtonGroup, Container } from "./ButtonsContainer.styled";
 import { EnglandAndWalesData } from "./EnglandAndWales/EnglandAndWalesData";
 import { ScotlandData } from "./Scotland/ScotlandData";
 import { NorthernIrelandData } from "./NorthernIreland/NorthernIrelandData";
@@ -45,9 +45,11 @@ export const ButtonsContainer = ({ name, segments }: Props) => {
   return (
     <>
       {segments.map((item) => (
-        <ButtonGroup key={item.key}>
-          <button onClick={() => setValue(item.value)}>{item.label}</button>
-        </ButtonGroup>
+        <Container>
+          <ButtonGroup key={item.key}>
+            <Button onClick={() => setValue(item.value)}>{item.label}</Button>
+          </ButtonGroup>
+        </Container>
       ))}
 
       <div>
