@@ -1,10 +1,53 @@
 import React from "react";
+import {
+  Card,
+  CardContainer,
+  CardFirstHeader,
+  CardSecondHeader,
+  CardThirdHeader,
+} from "../Card.styled";
+import { useDaysRequest } from "../../api/useDaysRequest";
 
-export const NorthernIrelandData = () => {
+type ReturnProps = {
+  events: Array<{}>;
+  date: string;
+  title: string;
+  id: number;
+};
+
+export const NorthernIrelandData = ({
+  events,
+  date,
+  title,
+  id,
+}: ReturnProps) => {
+  let { data: ReturnApiprops, error, isLoading } = useDaysRequest();
+
+  if (isLoading && !ReturnApiprops) return <p> Is Loading</p>;
+
+  if (error) {
+    return <p>An error has occurred!</p>;
+  }
+
   return (
-    <div>
-      <h1> Northern Ireland Data</h1>
-      <h2> Hello</h2>
-    </div>
+    <section>
+      <h1> Northern Ireland</h1>
+      {ReturnApiprops?.["northern-ireland"] &&
+        // eslint-disable-next-line array-callback-return
+        ReturnApiprops["northern-ireland"].events.map((item: ReturnProps) => {
+          let todaysDate = new Date().toISOString().split("T")[0];
+
+          if (item.date && item.date > todaysDate)
+            return (
+              <CardContainer>
+                <Card key={item.id}>
+                  <CardFirstHeader>Next Bank Holiday: </CardFirstHeader>
+                  <CardSecondHeader>{item.title}</CardSecondHeader>
+                  <CardThirdHeader>{item.date} </CardThirdHeader>
+                </Card>
+              </CardContainer>
+            );
+        })}
+    </section>
   );
 };

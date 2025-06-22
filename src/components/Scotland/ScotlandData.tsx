@@ -26,7 +26,7 @@ export const ScotlandData = () => {
 
   return (
     <section>
-      <h1> Scotland Data</h1>
+      <h1> Scotland</h1>
       {ReturnApiProps?.["scotland"] &&
         // eslint-disable-next-line array-callback-return
         ReturnApiProps["scotland"].events.map((item: ReturnProps) => {

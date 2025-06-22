@@ -39,7 +39,9 @@ const App = () => {
             />
           )}
           {value === "scotland" && <ScotlandData />}
-          {value === "northern-ireland" && <NorthernIrelandData />}
+          {value === "northern-ireland" && (
+            <NorthernIrelandData events={[]} date={""} title={""} id={0} />
+          )}
         </div>
       </body>
     </div>
