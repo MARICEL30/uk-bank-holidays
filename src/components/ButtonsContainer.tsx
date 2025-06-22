@@ -17,25 +17,20 @@ type Props = {
 export const segments = [
   {
     key: 1,
-
     value: "england-and-wales",
-
-    label: "England and Wales",
+    label: "england-and-wales",
   },
 
   {
     key: 2,
-
     value: "scotland",
-
-    label: "Scotland",
+    label: "scotland",
   },
 
   {
     key: 3,
     value: "northern-ireland",
-
-    label: "Northern-Ireland",
+    label: "northern-ireland",
   },
 ];
 
@@ -46,8 +41,10 @@ export const ButtonsContainer = ({ name, segments }: Props) => {
     <>
       {segments.map((item) => (
         <Container>
-          <ButtonGroup key={item.key}>
-            <Button onClick={() => setValue(item.value)}>{item.label}</Button>
+          <ButtonGroup>
+            <Button key={item.key} onClick={() => setValue(item.value)}>
+              {item.label}
+            </Button>
           </ButtonGroup>
         </Container>
       ))}

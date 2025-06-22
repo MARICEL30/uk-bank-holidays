@@ -1,16 +1,14 @@
 import styled from "styled-components";
 
 export const Container = styled.section`
+  display: inline-block;
+  margin: 250px 0 90px 0;
   border-radius: 25px;
   z-index: 10;
 `;
 
 export const ButtonGroup = styled.div`
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-
-  display: flex;
-  gap: 8px; /* Optional spacing between buttons */
-
   border-radius: 20px;
   background: #fff;
 `;

@@ -5,13 +5,13 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 30px auto;
+  margin: 20px auto;
 `;
 
 export const Icon = styled.div`
   width: 350px;
   height: 350px;
-  margin: 0px 10px auto;
+  margin: -70px 10px auto;
   z-index: -1;
 `;
 

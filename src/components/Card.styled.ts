@@ -3,7 +3,10 @@ import styled from "styled-components";
 export const CardContainer = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-content: center;
+  &:first-child {
+    margin-top: 200px;
+  }
 `;
 
 export const Card = styled.div`
@@ -11,7 +14,7 @@ export const Card = styled.div`
   height: 155px;
   background: #f0e2f1;
   border-radius: 20px;
-  margin: 20px auto;
+  margin: 10px auto;
 `;
 
 export const CardFirstHeader = styled.h1`

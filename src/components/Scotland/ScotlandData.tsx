@@ -5,7 +5,7 @@ import {
   CardFirstHeader,
   CardSecondHeader,
   CardThirdHeader,
-} from "../../assets/Card.styled";
+} from "../Card.styled";
 import { useDaysRequest } from "../../api/useDaysRequest";
 
 type ReturnProps = {

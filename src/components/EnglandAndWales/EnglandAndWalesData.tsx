@@ -5,7 +5,7 @@ import {
   CardFirstHeader,
   CardSecondHeader,
   CardThirdHeader,
-} from "../../assets/Card.styled";
+} from "../Card.styled";
 import { useDaysRequest } from "../../api/useDaysRequest";
 
 type ReturnProps = {
@@ -30,7 +30,7 @@ export const EnglandAndWalesData = ({
   }
 
   return (
-    <CardContainer>
+    <section>
       <h1> England data</h1>
       {ReturnApiprops?.["england-and-wales"] &&
         // eslint-disable-next-line array-callback-return
@@ -39,13 +39,15 @@ export const EnglandAndWalesData = ({
 
           if (item.date && item.date > todaysDate)
             return (
-              <Card key={item.id}>
-                <CardFirstHeader>Next Bank Holiday: </CardFirstHeader>
-                <CardSecondHeader>{item.title}</CardSecondHeader>
-                <CardThirdHeader>{item.date} </CardThirdHeader>
-              </Card>
+              <CardContainer>
+                <Card key={item.id}>
+                  <CardFirstHeader>Next Bank Holiday: </CardFirstHeader>
+                  <CardSecondHeader>{item.title}</CardSecondHeader>
+                  <CardThirdHeader>{item.date} </CardThirdHeader>
+                </Card>
+              </CardContainer>
             );
         })}
-    </CardContainer>
+    </section>
   );
 };

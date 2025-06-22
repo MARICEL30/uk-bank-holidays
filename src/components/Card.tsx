@@ -4,7 +4,7 @@ import {
   CardFirstHeader,
   CardSecondHeader,
   CardThirdHeader,
-} from "../assets/Card.styled";
+} from "./Card.styled";
 
 export const Card = (props: any) => {
   return (
