@@ -36,7 +36,7 @@ export const ScotlandData = () => {
             return (
               <CardContainer>
                 <Card key={item.id}>
-                  <CardFirstHeader>Next Bank Holiday: </CardFirstHeader>
+                  <CardFirstHeader>Next Bank Holiday</CardFirstHeader>
                   <CardSecondHeader>{item.title}</CardSecondHeader>
                   <CardThirdHeader>{item.date} </CardThirdHeader>
                 </Card>

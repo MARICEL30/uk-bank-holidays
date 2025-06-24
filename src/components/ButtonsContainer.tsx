@@ -18,19 +18,19 @@ export const segments = [
   {
     key: 1,
     value: "england-and-wales",
-    label: "england-and-wales",
+    label: "England and Wales",
   },
 
   {
     key: 2,
     value: "scotland",
-    label: "scotland",
+    label: "Scotland",
   },
 
   {
     key: 3,
     value: "northern-ireland",
-    label: "northern-ireland",
+    label: "Northern Ireland",
   },
 ];
 
