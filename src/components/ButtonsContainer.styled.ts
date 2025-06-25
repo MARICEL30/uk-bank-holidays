@@ -25,7 +25,13 @@ export const Button = styled.button`
   cursor: pointer;
   transition: all 0.5s ease-out;
   &:active {
-    background-color: #eb69f5; // Color when clicked
+    background: #3f5efb;
+    background: radial-gradient(
+      circle,
+      rgba(63, 94, 251, 1) 0%,
+      rgba(252, 70, 107, 1) 100%
+    );
     width: 11rem;
+    border-radius: 20px;
   }
 `;
