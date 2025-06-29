@@ -8,7 +8,7 @@ import { ScotlandData } from "./components/Scotland/ScotlandData";
 import { NorthernIrelandData } from "./components/NorthernIreland/NorthernIrelandData";
 
 const App = () => {
-  let { data: returnValues, error, isLoading } = useDaysRequest();
+  let { error, isLoading } = useDaysRequest();
 
   const [value, setValue] = useState("");
 
@@ -19,8 +19,8 @@ const App = () => {
   }
 
   return (
-    <div className="App">
-      <body className="body-container">
+    <body className="App">
+      <div className="body-container">
         <Header title="UK Bank Holidays" />
         <ButtonsContainer
           name=""
@@ -30,22 +30,14 @@ const App = () => {
           }}
         />
         <div className="data-container">
-          {value === "england-and-wales" && (
-            <EnglandAndWalesData
-              events={returnValues?.["england-and-wales"].events || []}
-              date={""}
-              title={""}
-              id={0}
-            />
-          )}
+          {value === "england-and-wales" && <EnglandAndWalesData />}
           {value === "scotland" && <ScotlandData />}
           {value === "northern-ireland" && <NorthernIrelandData />}
         </div>
-      </body>
-    </div>
+      </div>
+    </body>
   );
 };
-
 export default App;
 
 // check what day is today

@@ -1,18 +1,34 @@
 import styled from "styled-components";
 
 export const Container = styled.section`
-  display: inline-block;
-  width: 11rem;
-  margin: 250px 0 90px 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  width: 24rem;
+  margin: 300px auto;
   border-radius: 25px;
   z-index: 10;
+
+  @media (max-width: 600px) {
+    display: block;
+    width: 100vw;
+    text-align: center;
+    border: 1px solid red;
+    height: 200px;
+  }
 `;
 
 export const ButtonGroup = styled.div`
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
   background-color: #fff;
+  text-align: center;
   margin: 0.5rem;
+  @media (max-width: 600px) {
+    border: 1px solid red;
+  }
 `;
 
 export const Button = styled.button`
@@ -33,5 +49,8 @@ export const Button = styled.button`
     );
     width: 11rem;
     border-radius: 20px;
+    @media (max-width: 600px) {
+      margin: 30px auto;
+    }
   }
 `;

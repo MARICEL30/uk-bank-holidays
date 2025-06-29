@@ -38,7 +38,9 @@ export const ScotlandData = () => {
                 <Card key={item.id}>
                   <CardFirstHeader>Next Bank Holiday</CardFirstHeader>
                   <CardSecondHeader>{item.title}</CardSecondHeader>
-                  <CardThirdHeader>{item.date} </CardThirdHeader>
+                  <CardThirdHeader>
+                    {item.date.split("-").reverse().join("-")}{" "}
+                  </CardThirdHeader>
                 </Card>
               </CardContainer>
             );

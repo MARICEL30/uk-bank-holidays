@@ -39,20 +39,18 @@ export const ButtonsContainer = ({ name, segments }: Props) => {
 
   return (
     <>
-      {segments.map((item) => (
-        <Container>
+      <Container>
+        {segments.map((item) => (
           <ButtonGroup>
             <Button key={item.key} onClick={() => setValue(item.value)}>
               {item.label}
             </Button>
           </ButtonGroup>
-        </Container>
-      ))}
+        ))}
+      </Container>
 
       <div>
-        {value === "england-and-wales" && (
-          <EnglandAndWalesData events={[]} date={""} title={""} id={0} />
-        )}
+        {value === "england-and-wales" && <EnglandAndWalesData />}
 
         {value === "scotland" && <ScotlandData />}
         {value === "northern-ireland" && <NorthernIrelandData />}

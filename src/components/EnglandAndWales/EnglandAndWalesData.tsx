@@ -15,12 +15,7 @@ type ReturnProps = {
   id: number;
 };
 
-export const EnglandAndWalesData = ({
-  events,
-  date,
-  title,
-  id,
-}: ReturnProps) => {
+export const EnglandAndWalesData = () => {
   let { data: ReturnApiprops, error, isLoading } = useDaysRequest();
 
   if (isLoading && !ReturnApiprops) return <p> Is Loading</p>;
@@ -43,7 +38,9 @@ export const EnglandAndWalesData = ({
                 <Card key={item.id}>
                   <CardFirstHeader>Next Bank Holiday </CardFirstHeader>
                   <CardSecondHeader>{item.title}</CardSecondHeader>
-                  <CardThirdHeader>{item.date} </CardThirdHeader>
+                  <CardThirdHeader>
+                    {item.date.split("-").reverse().join("-")}{" "}
+                  </CardThirdHeader>
                 </Card>
               </CardContainer>
             );
