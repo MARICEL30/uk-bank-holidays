@@ -51,7 +51,6 @@ export const ButtonsContainer = ({ name, segments }: Props) => {
 
       <div>
         {value === "england-and-wales" && <EnglandAndWalesData />}
-
         {value === "scotland" && <ScotlandData />}
         {value === "northern-ireland" && <NorthernIrelandData />}
       </div>

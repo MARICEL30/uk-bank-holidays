@@ -6,8 +6,8 @@ export const Container = styled.section`
   align-items: center;
   justify-content: center;
 
-  width: 24rem;
-  margin: 300px auto;
+  width: 44rem;
+  margin: 280px auto 0 auto;
   border-radius: 25px;
   z-index: 10;
 
@@ -41,11 +41,9 @@ export const Button = styled.button`
   cursor: pointer;
   transition: all 0.5s ease-out;
   &:active {
-    background: #3f5efb;
-    background: radial-gradient(
-      circle,
-      rgba(63, 94, 251, 1) 0%,
-      rgba(252, 70, 107, 1) 100%
+   filter: contrast(180%);
+   transform: scale(1.1);
+   filter: drop-shadow(10px 15px 20px #fc466b);
     );
     width: 11rem;
     border-radius: 20px;

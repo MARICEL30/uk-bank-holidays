@@ -6,7 +6,7 @@ export const CardContainer = styled.div`
   align-content: center;
   text-align: center;
   &:first-child {
-    margin-top: 50px;
+    margin-top: 20px;
   }
 `;
 

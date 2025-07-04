@@ -7,6 +7,7 @@ import {
   CardThirdHeader,
 } from "../Card.styled";
 import { useDaysRequest } from "../../api/useDaysRequest";
+import { RegionBanner } from "../RegionBanner";
 
 type ReturnProps = {
   events: Array<{}>;
@@ -26,7 +27,7 @@ export const ScotlandData = () => {
 
   return (
     <section>
-      <h1> Scotland</h1>
+      <RegionBanner title={"Scotland"} />
       {ReturnApiProps?.["scotland"] &&
         // eslint-disable-next-line array-callback-return
         ReturnApiProps["scotland"].events.map((item: ReturnProps) => {
