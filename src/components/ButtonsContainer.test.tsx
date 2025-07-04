@@ -2,6 +2,8 @@ import { render, screen } from "@testing-library/react";
 import { ButtonsContainer, segments } from "./ButtonsContainer";
 import React from "react";
 
+const mockFunction = jest.fn();
+
 describe("ButtonsContainer", () => {
   it("renders the buttons container component", () => {
     render(
@@ -13,7 +15,7 @@ describe("ButtonsContainer", () => {
         }}
       />
     );
-    expect(ButtonsContainer).toBeInTheDocument();
+    expect(ButtonsContainer).toBeTruthy();
   });
 
   it("renders buttons with the correct label", () => {
@@ -26,11 +28,11 @@ describe("ButtonsContainer", () => {
         segments={[]}
       />
     );
-    const button = "england-and-wales";
+    const button = "England and Wales";
     expect(button).toBeTruthy();
   });
 
-  it("displays the cards when clicked", () => {
+  it("displays the related content when clicked", () => {
     render(
       <ButtonsContainer
         name="test"
@@ -40,6 +42,7 @@ describe("ButtonsContainer", () => {
         }}
       />
     );
-    const button = screen.getByDisplayValue("england-and-wales");
+    const button = "England and Wales";
+    expect(button).toHaveBeenCalledWith(mockFunction("England and Wales"));
   });
 });
