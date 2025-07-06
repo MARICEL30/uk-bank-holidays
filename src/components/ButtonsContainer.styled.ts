@@ -13,10 +13,8 @@ export const Container = styled.section`
 
   @media (max-width: 600px) {
     display: block;
-    width: 100vw;
+    width: 50vw;
     text-align: center;
-    border: 1px solid red;
-    height: 200px;
   }
 `;
 
@@ -27,7 +25,7 @@ export const ButtonGroup = styled.div`
   text-align: center;
   margin: 0.5rem;
   @media (max-width: 600px) {
-    border: 1px solid red;
+    text-align: center;
   }
 `;
 

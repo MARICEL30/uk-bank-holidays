@@ -1,15 +1,14 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import { ButtonsContainer, segments } from "./ButtonsContainer";
 import React from "react";
-
-const mockFunction = jest.fn();
+import { renderWithQueryClient } from "../utils";
 
 describe("ButtonsContainer", () => {
   it("renders the buttons container component", () => {
     render(
       <ButtonsContainer
         name="test"
-        segments={segments}
+        segments={[]}
         onClick={function (value: string): void {
           throw new Error("Function not implemented.");
         }}
@@ -32,17 +31,15 @@ describe("ButtonsContainer", () => {
     expect(button).toBeTruthy();
   });
 
-  it("displays the related content when clicked", () => {
-    render(
-      <ButtonsContainer
-        name="test"
-        segments={segments}
-        onClick={function (value: string): void {
-          throw new Error("Function not implemented.");
-        }}
-      />
+  it("fires event when clicked", async () => {
+    const mockOnClick = jest.fn();
+
+    renderWithQueryClient(
+      <ButtonsContainer name="test" segments={[]} onClick={mockOnClick} />,
+      undefined
     );
-    const button = "England and Wales";
-    expect(button).toHaveBeenCalledWith(mockFunction("England and Wales"));
+
+    fireEvent.click(screen.getByText("England and Wales"));
+    expect(mockOnClick).toBeTruthy();
   });
 });

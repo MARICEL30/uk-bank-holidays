@@ -19,23 +19,21 @@ const App = () => {
   }
 
   return (
-    <body className="App">
-      <div className="body-container">
-        <Header title="UK Bank Holidays" />
-        <ButtonsContainer
-          name=""
-          segments={segments}
-          onClick={() => {
-            setValue(value);
-          }}
-        />
-        <div className="data-container">
-          {value === "england-and-wales" && <EnglandAndWalesData />}
-          {value === "scotland" && <ScotlandData />}
-          {value === "northern-ireland" && <NorthernIrelandData />}
-        </div>
+    <div className="body-container">
+      <Header title="UK Bank Holidays" />
+      <ButtonsContainer
+        name=""
+        segments={segments}
+        onClick={() => {
+          setValue(value);
+        }}
+      />
+      <div className="data-container">
+        {value === "england-and-wales" && <EnglandAndWalesData />}
+        {value === "scotland" && <ScotlandData />}
+        {value === "northern-ireland" && <NorthernIrelandData />}
       </div>
-    </body>
+    </div>
   );
 };
 export default App;

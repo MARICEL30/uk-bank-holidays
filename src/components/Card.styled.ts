@@ -18,6 +18,9 @@ export const Card = styled.div`
   border-radius: 15px;
   margin: 10px auto;
   box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+  @media (max-width: 600px) {
+    width: 70vw;
+  }
 `;
 
 export const CardFirstHeader = styled.p`
