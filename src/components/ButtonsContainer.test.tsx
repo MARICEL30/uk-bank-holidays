@@ -35,7 +35,11 @@ describe("ButtonsContainer", () => {
     const mockOnClick = jest.fn();
 
     renderWithQueryClient(
-      <ButtonsContainer name="test" segments={[]} onClick={mockOnClick} />,
+      <ButtonsContainer
+        name="test"
+        segments={segments}
+        onClick={mockOnClick}
+      />,
       undefined
     );
 
