@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./App.css";
 import { Header } from "./components/Header";
 import { ButtonsContainer, segments } from "./components/ButtonsContainer";
 import { EnglandAndWalesData } from "./components/EnglandAndWales/EnglandAndWalesData";

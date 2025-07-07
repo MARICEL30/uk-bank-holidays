@@ -41,10 +41,8 @@ export const ButtonsContainer = ({ name, segments }: Props) => {
     <>
       <Container>
         {segments.map((item) => (
-          <ButtonGroup>
-            <Button key={item.id} onClick={() => setValue(item.value)}>
-              {item.label}
-            </Button>
+          <ButtonGroup key={item.id}>
+            <Button onClick={() => setValue(item.value)}>{item.label}</Button>
           </ButtonGroup>
         ))}
       </Container>

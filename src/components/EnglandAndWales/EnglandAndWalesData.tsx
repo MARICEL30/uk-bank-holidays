@@ -35,8 +35,8 @@ export const EnglandAndWalesData = () => {
 
           if (item.date && item.date > todaysDate)
             return (
-              <CardContainer>
-                <Card key={item.id}>
+              <CardContainer key={item.id}>
+                <Card>
                   <CardFirstHeader>Next Bank Holiday </CardFirstHeader>
                   <CardSecondHeader>{item.title}</CardSecondHeader>
                   <CardThirdHeader>
