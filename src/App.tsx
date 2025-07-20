@@ -36,12 +36,3 @@ const App = () => {
   );
 };
 export default App;
-
-// check what day is today
-//convert today's date into the right string date
-//Check the property date in every object in the array events
-// iterate trhough every property date
-//according to todays date return an array with the dates starting from today date
-
-//Implement the buttons controls
-//Render the data according to the buttons controls values
