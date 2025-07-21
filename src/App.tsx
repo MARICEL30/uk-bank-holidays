@@ -9,7 +9,7 @@ import { NorthernIrelandData } from "./components/NorthernIreland/NorthernIrelan
 const App = () => {
   let { error, isLoading } = useDaysRequest();
 
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState("england-and-wales");
 
   if (isLoading) return <p> Is Loading</p>;
 
