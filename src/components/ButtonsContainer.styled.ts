@@ -5,7 +5,6 @@ export const Container = styled.section`
   flex-direction: row;
   align-items: center;
   justify-content: center;
-
   width: 44rem;
   margin: 280px auto 0 auto;
   border-radius: 25px;
@@ -36,14 +35,18 @@ export const Button = styled.button`
   color: #000;
   font-size: 1rem;
   border: none;
+  width: 10rem;
   cursor: pointer;
   transition: all 0.5s ease-out;
   &:active {
    filter: contrast(180%);
-   transform: scale(1.1);
+   transform: scale(0.9);
    filter: drop-shadow(10px 15px 20px #fc466b);
+   width: 10rem;
     );
-    width: 11rem;
+   &:hover {
+     background-color: #f5ecec;
+    }
     border-radius: 20px;
     @media (max-width: 600px) {
       margin: 30px auto;

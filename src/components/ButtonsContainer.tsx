@@ -35,7 +35,7 @@ export const segments = [
 ];
 
 export const ButtonsContainer = ({ name, segments }: Props) => {
-  let [value, setValue] = useState("");
+  let [value, setValue] = useState("england-and-wales");
 
   return (
     <>
@@ -48,7 +48,7 @@ export const ButtonsContainer = ({ name, segments }: Props) => {
       </Container>
 
       <div>
-        {value === "england-and-wales" && <EnglandAndWalesData />}
+        {value === "england-and-wales" ? <EnglandAndWalesData /> : null}
         {value === "scotland" && <ScotlandData />}
         {value === "northern-ireland" && <NorthernIrelandData />}
       </div>
