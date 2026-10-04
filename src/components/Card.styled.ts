@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+const holidayAccent = "#eb69f5";
+
 export const CardContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -30,7 +32,7 @@ export const CardFirstHeader = styled.p`
   font-size: 0.8rem;
   padding: 0.2rem;
   margin-left: 10px;
-  background-color: #eb69f5;
+  background-color: ${holidayAccent};
   color: #fff;
 `;
 
@@ -45,4 +47,35 @@ export const CardThirdHeader = styled.h3`
   font-weight: 400;
   font-size: 1.2rem;
   font-style: normal;
+`;
+
+export const BackToTopButton = styled.button`
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  z-index: 20;
+  display: grid;
+  place-items: center;
+  width: 3.5rem;
+  aspect-ratio: 1;
+  border: 1px solid #d3d3d3;
+  border-radius: 50%;
+  background-color: ${holidayAccent};
+  color: #fff;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+
+  &:hover {
+    filter: brightness(0.92);
+  }
+
+  &:focus-visible {
+    outline: 3px solid #000;
+    outline-offset: 3px;
+  }
+
+  @media (max-width: 600px) {
+    right: 1rem;
+    bottom: 1rem;
+  }
 `;

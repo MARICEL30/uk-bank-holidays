@@ -30,26 +30,26 @@ export const ButtonGroup = styled.div`
 
 export const Button = styled.button`
   font-family: "Fira Sans", serif;
-  background-color: #fff;
+  background-color: #eb69f5;
   width: fit-content;
-  color: #000;
+  color: #fff;
   font-size: 1rem;
   border: none;
   width: 10rem;
+  border-radius: 20px;
   cursor: pointer;
   transition: all 0.5s ease-out;
+
   &:active {
-   filter: contrast(180%);
-   transform: scale(0.9);
-   filter: drop-shadow(10px 15px 20px #fc466b);
-   width: 10rem;
-    );
-   &:hover {
-     background-color: #f5ecec;
-    }
-    border-radius: 20px;
-    @media (max-width: 600px) {
-      margin: 30px auto;
-    }
+    filter: drop-shadow(10px 15px 20px #fc466b);
+    transform: scale(0.9);
+  }
+
+  &:hover {
+    filter: brightness(0.92);
+  }
+
+  @media (max-width: 600px) {
+    margin: 30px auto;
   }
 `;

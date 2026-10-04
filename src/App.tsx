@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Header } from "./components/Header";
 import { ButtonsContainer, segments } from "./components/ButtonsContainer";
 import { useDaysRequest } from "./api";
+import { BackToTopButton } from "./components/Card.styled";
 
 const App = () => {
   let { error, isLoading } = useDaysRequest();
@@ -20,6 +21,14 @@ const App = () => {
         segments={segments}
         onClick={() => setValue(value)}
       />
+      <BackToTopButton
+        type="button"
+        aria-label="Back to top"
+        title="Back to top"
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+      >
+        Top
+      </BackToTopButton>
     </div>
   );
 };
