@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import gsap from "gsap";
 
 type Props = {
   isolation?: string;
@@ -7,6 +8,21 @@ type Props = {
 };
 
 export const WomanIcon = ({ isolation, width, height }: Props) => {
+  const circleRef = useRef<SVGCircleElement>(null);
+
+  useEffect(() => {
+    const tween = gsap.to(circleRef.current, {
+      rotation: 360,
+      svgOrigin: "179.10794 181.97066",
+      duration: 5.5,
+      ease: "none",
+      repeat: -1,
+    });
+    return () => {
+      tween.kill();
+    };
+  }, []);
+
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -15,7 +31,21 @@ export const WomanIcon = ({ isolation, width, height }: Props) => {
       viewBox="0 0 691.08839 756.35742"
       xmlnsXlink="http://www.w3.org/1999/xlink"
     >
-      <circle cx="179.10794" cy="181.97066" r="143.89207" fill="#ff6884" />
+      <defs>
+        <linearGradient id="circle-gradient" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stopColor="#ff6884" />
+          <stop offset="50%" stopColor="#e0d2d5" />
+          <stop offset="100%" stopColor="#e3cf1e" />
+          <stop offset="100%" stopColor="#f01212" />
+        </linearGradient>
+      </defs>
+      <circle
+        ref={circleRef}
+        cx="179.10794"
+        cy="181.97066"
+        r="143.89207"
+        fill="url(#circle-gradient)"
+      />
       <path
         d="M394.07971,55.60182L116.93066,208.26465c-32.01562,41.04785,576.32227,43.58545,571.30177,.15088L419.48215,55.7528c-7.64948-4.34526-17.67978-4.40488-25.40244-.15098Z"
         fill="#f926f1"

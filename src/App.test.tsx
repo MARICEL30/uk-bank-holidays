@@ -10,6 +10,8 @@ test("renders app component with correct text", async () => {
   expect(textElement).toBeInTheDocument();
 
   const scrollTo = jest.spyOn(window, "scrollTo").mockImplementation(() => {});
+  Object.defineProperty(window, "scrollY", { value: 100, configurable: true });
+  fireEvent.scroll(window);
   const backToTopButton = await screen.findByRole("button", {
     name: /back to top/i,
   });
